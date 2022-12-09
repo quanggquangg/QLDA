@@ -4,9 +4,6 @@ from django.contrib.postgres.fields import ArrayField
 
 from datetime import date
 
-# Create your models here.
-
-
 #user = models.OneToOneField(settings.AUTH_USER_MODEL)
 
 class patient(models.Model):
