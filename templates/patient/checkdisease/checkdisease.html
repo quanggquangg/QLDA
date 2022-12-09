@@ -43,14 +43,16 @@ window.onclick = function(event) {
 }
 
   function Functionsymptoms(name) {
-    var newItem = document.createElement("TEXTAREA");
+    var element =  document.getElementById(name);
+    if (typeof(element) == 'undefined' || element == null) {
+      var newItem = document.createElement("TEXTAREA");
     newItem.innerText = name;
     newItem.setAttribute("id",name);
     newItem.setAttribute("readonly", true);
     newItem.setAttribute("class","symptoms");
     newItem.setAttribute("onclick","Removesymptoms("+name+")");
     document.getElementById("sympbox").appendChild(newItem);
-    
+    }     
   }
 
   function Removesymptoms(name) {
