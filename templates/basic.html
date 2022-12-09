@@ -13,8 +13,6 @@
   <link rel="stylesheet" href="{% static 'homepage/bootstrap/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'homepage/css.css' %}">
 
-
-
   <style>
     .img {
       position: relative;
@@ -38,14 +36,9 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}">About</a>
-        </li>
       </ul>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-                  
-
           {% if user.is_authenticated %}
 
           {% if user.patient %}
@@ -57,32 +50,6 @@
           <li class="nav-item ml-2">
             <a class="nav-link" href="{% url 'patient_ui' %}" style="color: white;">Profile</a>
           </li>
-
-          {% endif %}
-
-          {% if user.doctor %}
-
-          <li class="nav-item ml-2">
-          <li class="nav-link" href="{% url 'doctor_ui' %}" style="color: rgb(250, 0, 0);">Hello, Dr.
-            {{user.doctor.name}}</li>
-          </li>
-          <li class="nav-item ml-2">
-            <a class="nav-link" href="{% url 'doctor_ui' %}" style="color: white;">Profile</a>
-          </li>
-
-
-          {% endif %}
-
-          {% if user.is_superuser %}
-
-          <li class="nav-item ml-2">
-          <li class="nav-link" href="{% url 'admin_ui' %}" style="color: rgb(253, 186, 1);">Admin: {{user.username}}
-          </li>
-          </li>
-          <li class="nav-item ml-2">
-            <a class="nav-link" href="{% url 'admin_ui' %}" style="color: white;">Profile</a>
-          </li>
-
 
           {% endif %}
 
@@ -126,34 +93,21 @@
 
     <!-- Large modal -->
 
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg">
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" > 
+      <div class="modal-dialog modal-lg" style="width: 500px;">
         <div class="modal-content">
-
-          <center>
-            <h1>Sign-In As</h1>
-          </center>
           <br><br>
+          <center>
+            <h1 style="opacity: 1;">Sign in</h1>
+          </center>
 
           <center>
-            <form>
               <div class="container mt-5 mb-5">
-                <div class="row">
-                  <div class="col">
-                    <a href="{% url 'sign_in_doctor' %}">
-                      <img alt="doctor" src="{% static 'homepage/doctor.png' %}" class="img">
-                    </a>
-                  </div>
-
-                  <div class="col">
-                    <a href="{% url 'sign_in_patient' %}">
+                    <a href="{% url 'sign_in_patient' %}" style="display: flex; justify-content: center;">
                       <img alt="patient" src="{% static 'homepage/patient.png' %}" class="img">
                     </a>
-                  </div>
-                </div>
+
               </div>
-            </form>
           </center>
 
         </div>

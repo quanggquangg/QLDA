@@ -11,7 +11,7 @@
 </head>
 <body>
 <form action='signup_patient' method="POST" style="max-height:500px; max-width:450px;  margin:auto;">
- <h1></b><center>SIGN UP AS PATIENT</center></b></h1><br>
+ <h1></b><center>SIGN UP</center></b></h1><br>
 
   {% csrf_token %}
   
@@ -45,17 +45,17 @@
     <i class="fa fa-calendar icon"></i>
     <input class="input-field" type="date" placeholder="Date-of-birth" name="dob" required>
   </div>
-  <div class="input-container">
-    <i class="fa fa-birthday-cake icon"></i>
-    <input class="input-field" type="number" placeholder="Age" name="age" required>
-  </div>
-  <div class="input-container">
-  
-  <i class="fa fa-genderless icon"></i>
-    <input class="radio-btn" type="radio" name="gender" value="male" checked> Male 
-  <input class="radio-btn" type="radio" name="gender" value="female"> Female
-  <input class="radio-btn" type="radio" name="gender" value="other"> Other 
- 
+  <div class="input-container" style="height: 48px; display: flex; justify-content: space-between; align-items: center;">
+    <i class="fa fa-genderless icon" style="height: 48px;"></i>
+    <span style="padding-left: 20px;">
+      <input class="radio-btn" type="radio" name="gender" value="male" checked style="padding-left: 20px;">     Male 
+    </span>
+    <span style="padding-left: 20px;">
+      <input class="radio-btn" type="radio" name="gender" value="female" style="padding-left: 20px;">     Female
+    </span>
+    <span style="padding-left: 20px;">
+      <input class="radio-btn" type="radio" name="gender" value="other" style="padding-left: 20px;">      Other
+    </span>
   </div>
   
   
@@ -65,7 +65,7 @@
   </div>
   <div class="input-container">
     <i class="fa fa-phone icon"></i>
-    <input class="input-field" type="number" placeholder="Mobile" name="mobile" required>
+    <input class="input-field" type="text" placeholder="Mobile" name="mobile" required>
   </div>
   
   <div class="input-container">
@@ -75,7 +75,7 @@
   
   <div class="input-container">
     <i class="fa fa-check icon"></i>
-    <input class="input-field" type="password" placeholder="Retype Password" name="password1" required>
+    <input class="input-field" type="password" placeholder="Re-Password" name="password1" required>
   </div>
   
   
