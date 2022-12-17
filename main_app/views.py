@@ -97,31 +97,31 @@ def checkdisease(request):
   'Arthritis', '(vertigo) Paroymsal  Positional Vertigo','Acne', 'Urinary tract infection', 'Psoriasis', 'Impetigo']
 
 
-  symptomslist=['itching','skin_rash','nodal_skin_eruptions','continuous_sneezing','shivering','chills','joint_pain',
-  'stomach_pain','acidity','ulcers_on_tongue','muscle_wasting','vomiting','burning_micturition','spotting_ urination',
-  'fatigue','weight_gain','anxiety','cold_hands_and_feets','mood_swings','weight_loss','restlessness','lethargy',
-  'patches_in_throat','irregular_sugar_level','cough','high_fever','sunken_eyes','breathlessness','sweating',
-  'dehydration','indigestion','Đau đầu','yellowish_skin','dark_urine','nausea','loss_of_appetite','pain_behind_the_eyes',
-  'back_pain','constipation','abdominal_pain','diarrhoea','mild_fever','yellow_urine',
-  'yellowing_of_eyes','acute_liver_failure','fluid_overload','swelling_of_stomach',
-  'swelled_lymph_nodes','malaise','blurred_and_distorted_vision','phlegm','throat_irritation',
-  'redness_of_eyes','sinus_pressure','Chảy nước mũi','congestion','chest_pain','weakness_in_limbs',
-  'fast_heart_rate','pain_during_bowel_movements','pain_in_anal_region','bloody_stool',
-  'irritation_in_anus','neck_pain','dizziness','cramps','bruising','obesity','swollen_legs',
-  'swollen_blood_vessels','puffy_face_and_eyes','enlarged_thyroid','brittle_nails',
-  'swollen_extremeties','excessive_hunger','extra_marital_contacts','drying_and_tingling_lips',
-  'slurred_speech','knee_pain','hip_joint_pain','muscle_weakness','stiff_neck','swelling_joints',
-  'movement_stiffness','spinning_movements','loss_of_balance','unsteadiness',
-  'weakness_of_one_body_side','loss_of_smell','bladder_discomfort','foul_smell_of urine',
-  'continuous_feel_of_urine','passage_of_gases','internal_itching','toxic_look_(typhos)',
-  'depression','irritability','muscle_pain','altered_sensorium','red_spots_over_body','belly_pain',
-  'abnormal_menstruation','dischromic _patches','watering_from_eyes','increased_appetite','polyuria','family_history','mucoid_sputum',
-  'rusty_sputum','lack_of_concentration','visual_disturbances','receiving_blood_transfusion',
-  'receiving_unsterile_injections','coma','stomach_bleeding','distention_of_abdomen',
-  'history_of_alcohol_consumption','fluid_overload','blood_in_sputum','prominent_veins_on_calf',
-  'palpitations','painful_walking','pus_filled_pimples','blackheads','scurring','skin_peeling',
-  'silver_like_dusting','small_dents_in_nails','inflammatory_nails','blister','red_sore_around_nose',
-  'yellow_crust_ooze']
+  symptomslist=['Ngứa','Phát ban da','Phát ban nốt sần trên da','Hắt hơi liên tục','Rùng mình','Ớn lạnh','Đau khớp',
+  'Đau dạ dày','Ợ nóng','Loét lưỡi','Teo cơ','Nôn ói','Đi tiểu buốt','Đi tiểu ra máu',
+  'Mệt mỏi','Tăng cân','Lo lắng','Tay chân lạnh','Tâm trạng thay đổi thất thường','Sụt cân','Bồn chồn','Thờ ơ',
+  'Nổi nốt đỏ trong khoang miệng','Mức đường bất thường','Ho','Sốt cao','Mắt trũng','Khó thở','Đổ mồ hôi',
+  'Mất nước','Khó tiêu','Đau đầu','Da vàng','Nước tiểu sẫm màu','Buồn nôn','Chán ăn','Đau sau mắt',
+  'Đau lưng','Táo bón','Đau bụng','Tiêu chảy','Sốt nhẹ','Nước tiểu vàng',
+  'Vàng mắt','Suy gan cấp tính','Quá tải chất lỏng','Sưng dạ dày',
+  'Nốt bạch huyết sưng lên','Khó chịu','Mờ và méo mắt','Đờm','Kích ứng cổ họng',
+  'Đỏ mắt','Nhức xoang','Chảy nước mũi','Nghẹt mũi','Đau ngực','Yếu tay chân',
+  'Tim đập nhanh','Đau ruột khi di chuyển','Đau ở vùng hậu môn','Máu trong phân',
+  'Kích ứng hậu môn','Đau cổ','Chóng mặt','Chuột rút','Bầm tím','Béo phì','Sưng chân',
+  'Phù mạch máu','Sưng mặt và mắt','Tuyến giáp to','Móng tay dễ gãy',
+  'Sưng cánh tay và bàn tay','Thèm ăn','Ngoại tình','Khô và nẻ môi',
+  'Loạn ngôn','Đau đầu gối','Đau khớp hông','Yếu cơ','Cứng cổ','Sưng khớp',
+  'Di chuyển không thoải mái','Chóng mặt','Mất thăng bằng','Đi không vững',
+  'Yếu một phần cơ thể','Mất mùi hôi','Khó chịu bàng quang','Nước tiểu có mùi',
+  'Đái dắt','Đầy hơi','Ngứa trong','Nhìn giống bị nhiễm độc(Phát ban)',
+  'Trầm cảm','Cáu kỉnh','Đau cơ','Mất tập trung','Đốm đỏ trên cơ thể','Đau cơ bụng',
+  'Kinh nguyệt bất thường','Mảng da đổi màu','Chảy nước mắt','Ăn nhiều','Tiểu nhiều','Tiền sử gia đình','Có đờm',
+  'Đờm nâu','Thiếu tập trung','Rối loạn thị giác','Truyền máu',
+  'Kim tiêm không khử trùng','Hôn mê','Chảy máu dạ dày','Trướng bụng',
+  'Sử dụng thức uống có cồn','Tăng thể tích máu','Máu trong đờm','Giãn tĩnh mạch',
+  'Đánh trống ngực','Đau đớn khi di chuyển','Mụn có mủ','Mụn đầu đen','Sẹo lõm','Lột da',
+  'Tiếp xúc nhiều với bạc','Rỗ móng tay','Vẩy nến','Mụn nước','Da đỏ xung quanh mũi',
+  'Mụn chảy dịch vàng']
 
   alphabaticsymptomslist = sorted(symptomslist)
 
@@ -235,8 +235,18 @@ def checkdisease(request):
         patientusername = request.session['patientusername']
         puser = User.objects.get(username=patientusername)
 
+        stt = 0
         patient = puser.patient
-        diseasename = predicted_disease
+        for s in range(41):
+            if (predicted_disease == diseaselist[s]):
+               stt = s
+        vietnam_diseaselist=['Nhiễm nấm','Dị ứng','GERD','Ứ mật mãn tính','Phản ứng thuốc','Bệnh loét dạ dày','AIDS','Tiểu đường ',
+         'Viêm dạ dày ruột','Hen phế quản','Tăng huyết áp ','Chứng đau nửa đầu','Thoái hóa đốt sống cổ','Bại liệt (xuất huyết não)',
+         'Viêm gan','Sốt rét','Thủy đậu','Sốt xuất huyết','Thương hàn','Viêm gan A', 'Viêm gan B', 'Viêm gan C', 'Viêm gan D',
+         'Viêm gan E', 'Viêm gan do rượu','Bệnh lao', 'Cảm lạnh thông thường', 'Viêm phổi', 'Bệnh trĩ lưỡng hình',
+         'Đau tim', 'Giãn tĩnh mạch','Suy giáp', 'Cường giáp', 'Hạ đường huyết', 'Bệnh thoái hóa khớp',
+         'Viêm khớp', 'Chóng mặt tư thế lành tính','Mụn trứng cá', 'Nhiễm trùng đường tiết niệu', 'Vảy nến', 'Bệnh chốc']
+        diseasename = vietnam_diseaselist[stt]
         no_of_symp = inputno
         symptomsname = psymptoms
         confidence = confidencescore
@@ -249,7 +259,7 @@ def checkdisease(request):
 
         print("disease record saved sucessfully.............................")
 
-        return JsonResponse({'predicteddisease': predicted_disease ,'confidencescore':confidencescore , "consultdoctor": consultdoctor})
+        return JsonResponse({'predicteddisease': diseasename ,'confidencescore':confidencescore , "consultdoctor": consultdoctor})
    
 
 

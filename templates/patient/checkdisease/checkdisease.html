@@ -180,7 +180,7 @@ $("#predict").click(function () {
     <br>
     <div class="text-center" style="margin-bottom: 20px ;"> 
     <br>
-            <button onclick="Functionshow()" class="btn btn-primary dropdown-toggle">Add symptoms</button>
+            <button onclick="Functionshow()" class="btn btn-primary dropdown-toggle">Thêm triệu chứng</button>
     </div>
   </div >
 
@@ -208,13 +208,13 @@ $("#predict").click(function () {
         <div class="card" id= "symptoms-box">
     
       {% csrf_token %}
-            <div class="card-header">Symptoms list -</div>
+            <div class="card-header">- Danh sách triệu chứng -</div>
                     <div class="card-body" id="sympbox">
           
                     </div>
                           <br>
                           <div class="card-footer">
-                                <button id="predict" class="btn btn-success">Predict</button>
+                                <button id="predict" class="btn btn-success">Chẩn Đoán</button>
                           </div>
              </div>
         </div>
@@ -226,12 +226,12 @@ $("#predict").click(function () {
         <div class="text-center">
               <div class="card" id="predicted-data">
                     <div>
-                            <span class="diseasefield" >Patient name : {{ user.patient.name }}</span>
-                            <span class="diseasefield" >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Age : {{ user.patient.age }} </span>
+                            <span class="diseasefield" >Tên bệnh nhân : {{ user.patient.name }}</span>
+                            <span class="diseasefield" >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Tuổi : {{ user.patient.age }} </span>
                     </div>
-                    <span class="diseasefield" >Predicted disease is : </span><span class="diseasefield" id="diseasefield" style="color: #092700; text-shadow: 2px 2px 4px rgb(36, 255, 45);"></span> <br>
+                    <span class="diseasefield" >Bệnh chẩn đoán được là : </span><span class="diseasefield" id="diseasefield" style="color: #092700; text-shadow: 2px 2px 4px rgb(36, 255, 45);"></span> <br>
                     <br>
-                    <span class="diseasefield">Confidence score of :  </span>
+                    <span class="diseasefield">Tỉ lệ dự đoán đúng :  </span>
                     <span>
                           <div class="progress" style="display: inline-block;width:140px">
                               <div id="percentage" class="progress-bar" style="width: 0%">0%
@@ -244,7 +244,7 @@ $("#predict").click(function () {
 
         <div class="text-center mt-4 mb-4"> 
               <button class="btn btn-outline-success">
-                    <a id="href" href="https://www.google.com/search?q=anuj" target="_blank" rel="noopener noreferrer"><font color="black">Click here to know more about &nbsp</font> 
+                    <a id="href" href="https://www.google.com/search?q=anuj" target="_blank" rel="noopener noreferrer"><font color="black">Click vào đây để biết thêm thông tin về bệnh&nbsp</font> 
                     <span id="diseasesearch" style="color: rgb(251, 255, 0);"></span></a>
               </button>
         </div>
