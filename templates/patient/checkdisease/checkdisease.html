@@ -15,7 +15,6 @@
   /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function Functionshow() {
-  
   document.getElementById("searchbar").value = '';
   document.getElementById("myDropdown").classList.toggle("show");
    search_symptoms();
@@ -44,19 +43,23 @@ window.onclick = function(event) {
 }
 
   function Functionsymptoms(name) {
-    var newItem = document.createElement("TEXTAREA");
+    var element =  document.getElementById(name);
+    if (typeof(element) == 'undefined' || element == null) {
+      var newItem = document.createElement("TEXTAREA");
     newItem.innerText = name;
-    newItem.setAttribute("id","symptoms");
-    
+    newItem.setAttribute("id",name);
+    newItem.setAttribute("readonly", true);
     newItem.setAttribute("class","symptoms");
+    newItem.setAttribute("onclick","Removesymptoms("+name+")");
     document.getElementById("sympbox").appendChild(newItem);
-    
+    }     
+  }
+
+  function Removesymptoms(name) {
+    document.getElementById("sympbox").removeChild(name);
   }
 
  
-  //var elements = document.getElementsByClassName("symptoms");
-
-
   function search_symptoms() { 
     let input = document.getElementById('searchbar').value 
     input=input.toLowerCase(); 
@@ -152,8 +155,6 @@ $("#predict").click(function () {
 
 
 
-
-
 </script>
 
 
@@ -175,23 +176,9 @@ $("#predict").click(function () {
 
 
 <div class="container">
-      <!-- 
-  
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Dropdown button
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-    </div>
-  </div> -->
-
-
   <div class="container">
     <br>
-    <div class="text-center"> 
+    <div class="text-center" style="margin-bottom: 20px ;"> 
     <br>
             <button onclick="Functionshow()" class="btn btn-primary dropdown-toggle">Add symptoms</button>
     </div>
@@ -199,10 +186,10 @@ $("#predict").click(function () {
 
   <div id="myDropdown" class="drop-content">
 
-        <div id="searchbardiv" class="searchbardiv">    
+        <div id="searchbardiv" class="searchbardiv" style="display: flex; justify-content: center;">    
       
             <input id="searchbar" class="searchbar" onkeyup="search_symptoms()" type="text"
-              name="search" placeholder=" Search symptoms.. "> <br>
+              name="search" placeholder=" Search symptoms.. " style="display: flex; margin: 0;"> <br>
         </div> 
 
         <div class="container" id="container-dropdown">
@@ -216,39 +203,14 @@ $("#predict").click(function () {
         
       
     
-
-
-<!-- 
-
-<div class="dropdown">
-  
-    <button onclick="Functionshow()" class="dropbtn">Add symptoms</button>
-      
-  </div >
-    <div id="myDropdown" class="dropdown-content">
-
-     <div id="searchbardiv" class="searchbardiv">    
-      
-    <input id="searchbar" class="searchbar" onkeyup="search_symptoms()" type="text"
-    name="search" placeholder=" Search symptoms.. "> <br>
-  </div> 
-  <div>
-            {% for i in list2 %}
-            
-            <a class="links" onclick="Functionsymptoms(this.textContent)">{{i}}</a>
-            
-            {% endfor %}
-  </div>
-        </div>
-       -->
-    
 <br><br>
   <div class="text-center">
         <div class="card" id= "symptoms-box">
     
       {% csrf_token %}
             <div class="card-header">Symptoms list -</div>
-                    <div class="card-body" id="sympbox" >
+                    <div class="card-body" id="sympbox">
+          
                     </div>
                           <br>
                           <div class="card-footer">
@@ -291,22 +253,7 @@ $("#predict").click(function () {
         <div class="text-center">
         <br><br>
 
-        </div>
-
-
-<!-- <div class="mx-auto text-center " style="width:350px">
-  
-     
-        <div >  <form action="consult_a_doctor" method="GET">
-            {% csrf_token %} 
-            <button id="consultbtn" type="submit" class="btn btn-primary"> Consult a <span id="consultdoctor"  name="consultdoctor" > </span> doctor</button>
-          </form>
-        </div>
-      
- 
-</div> -->
-
-        
+        </div>     
 </div>
 
 
