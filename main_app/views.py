@@ -254,7 +254,6 @@ def checkdisease(request):
         diseaseinfo_new = diseaseinfo(patient=patient,diseasename=diseasename,no_of_symp=no_of_symp,symptomsname=symptomsname,confidence=confidence,consultdoctor=consultdoctor)
         diseaseinfo_new.save()
         
-
         request.session['diseaseinfo_id'] = diseaseinfo_new.id
 
         print("disease record saved sucessfully.............................")
