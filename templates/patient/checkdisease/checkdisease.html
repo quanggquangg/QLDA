@@ -1,5 +1,4 @@
 
-
 {% extends "basic.html" %}
 {% load static %}
 
@@ -17,7 +16,7 @@ toggle between hiding and showing the dropdown content */
 function Functionshow() {
   document.getElementById("searchbar").value = '';
   document.getElementById("myDropdown").classList.toggle("show");
-   search_symptoms();
+  search_symptoms();
   
 }
 
@@ -41,16 +40,32 @@ window.onclick = function(event) {
 }
 }
 }
+// remove accents
+function stringToSlug(str) {
+  var from = "àáãảạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệđùúủũụưừứửữựòóỏõọôồốổỗộơờớởỡợìíỉĩịäëïîöüûñçýỳỹỵỷ",
+      to   = "aaaaaaaaaaaaaaaaaeeeeeeeeeeeduuuuuuuuuuuoooooooooooooooooiiiiiaeiiouuncyyyyy";
+  for (var i=0, l=from.length ; i < l ; i++) {
+    str = str.replace(RegExp(from[i], "gi"), to[i]);
+  }
+
+  str = str.toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\-]/g, '')
+        .replace(/-+/g, '');
+
+  return str;
+}
+
 
   function Functionsymptoms(name) {
     var element =  document.getElementById(name);
     if (typeof(element) == 'undefined' || element == null) {
-      var newItem = document.createElement("TEXTAREA");
+      var newItem = document.createElement("textarea");
     newItem.innerText = name;
-    newItem.setAttribute("id",name);
+    newItem.setAttribute("id",stringToSlug(name));
     newItem.setAttribute("readonly", true);
     newItem.setAttribute("class","symptoms");
-    newItem.setAttribute("onclick","Removesymptoms("+name+")");
+    newItem.setAttribute("onclick","Removesymptoms("+(stringToSlug(name))+")");
     document.getElementById("sympbox").appendChild(newItem);
     }     
   }
@@ -258,12 +273,8 @@ $("#predict").click(function () {
 
 
 
-
-
-
-
 </div>
 
-
-
 {% endblock %}
+
+
