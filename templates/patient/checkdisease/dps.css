@@ -32,7 +32,8 @@
 .symptoms{
   border:ridge rgb(150, 177, 199);
   margin: 2px;
-  display: block ;
+  display: flex;
+  justify-content: center;
   text-align: center;
   padding: 0px !important;
   
